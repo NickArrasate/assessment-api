@@ -37,9 +37,10 @@ Shoulda::Matchers.configure do |config|
 end
 
 RSpec.configure do |config|
-  # add `FactoryGirl` methods
-  config.include FactoryGirl::Syntax::Methods
-  config.include RequestSpecHelper, type: :request
+  # add `FactoryBot` methods
+  config.include FactoryBot::Syntax::Methods
+  config.include ControllerSpecHelper
+  config.include RequestSpecHelper
 
   # start by truncating all the tables but then use the faster transaction strategy the rest of the time.
  config.before(:suite) do
